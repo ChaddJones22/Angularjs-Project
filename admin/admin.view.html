@@ -10,10 +10,14 @@
 <h3>All registered users:</h3>
 <ul>
     <li ng-repeat="user in vm.allUsers">
-        {{user.username}} ({{user.firstName}} {{user.lastName}} {{user.role}})
-        - <a ng-click="vm.deleteUser(user.id)">Delete</a>
-        - <select><option ng-repeat="x in roles">{{x}}</option></select>
-    </li>
+        Username: {{user.username}}<br/>
+        Name: {{user.firstName}} {{user.lastName}}<br/>
+        Role: {{user.role}}<br/>
+        -- <a ng-click="vm.deleteUser(user.id)">Delete</a><br/>
+        - <select ng-model="selectedRole"><option ng-repeat="x in role" value="{{x}}">{{x}}</option></select><br/>
+        Click button to confirm role:
+        <button ng-click="vm.setCurrentRole({{selectedRole}})">{{selectedRole}}</button><br/><br/>
+      </li>
 </ul>
 <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
 <p>&nbsp;</p>

@@ -12,8 +12,9 @@
         vm.user = null;
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
-        vm.setRole = setRole;
-        $rootScope.roles = ["admin", "engineering"];
+        vm.setCurrentRole = setCurrentRole;
+        vm.loadCurrentRole = loadCurrentRole
+        $rootScope.role = ["NONE", "ADMIN", "FINANCE_ADMIN", "SALES_ADMIN", "HR_ADMIN", "ENGG_ADMIN"];
 
         initController();
 
@@ -36,8 +37,16 @@
                 });
         }
 
-        function setRole(user){
-            UserService.Update(user)
+        function setCurrentRole(role){
+            UserService.SetRole(user, role)
+            .then(function (user){
+                vm.user = user;
+                loadAllUsers();
+            });
+        }
+
+        function loadCurrentRole(role){
+            UserService.GetRole(role)
             .then(function (user){
                 vm.user = user;
             });

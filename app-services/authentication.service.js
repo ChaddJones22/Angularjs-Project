@@ -47,8 +47,8 @@
             $rootScope.globals = {
                 currentUser: {
                     username: username,
-                    authdata: authdata
-                }
+                    authdata: authdata,
+               }
             };
 
             // set default auth header for http requests

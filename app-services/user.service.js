@@ -15,8 +15,8 @@
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
-       // service.SetRole = SetRole;
-        //service.GetRole = GetRole;
+        service.SetRole = SetRole;
+        service.GetRole = GetRole;
 
         return service;
 
@@ -44,9 +44,14 @@
             return $http.delete('/api/users/' + id).then(handleSuccess, handleError('Error deleting user'));
         }
 
-        /*function setRole(user){
-            return $http.put('/api/users/' + user.SetRole)
-        }*/
+        function SetRole(user){
+            return $http.put('/api/users/' + user.role, user).then(handleSuccess, handleError('Error setting role to user'));
+        }
+
+        function GetRole(role){
+            return $http.get('/api/users/' + role).then(handleSuccess, handleError('Error getting role from user'));
+        }
+
         // private functions
 
         function handleSuccess(res) {
