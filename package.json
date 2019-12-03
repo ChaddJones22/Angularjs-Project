@@ -1,0 +1,9 @@
+{
+  "name": "angularjs-aymrat",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.23",
+    "angular": "^1.7.9"
+  }
+}
