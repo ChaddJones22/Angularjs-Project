@@ -47,8 +47,7 @@
             $rootScope.globals = {
                 currentUser: {
                     username: username,
-                    authdata: authdata,
-                    //role: role
+                    authdata: authdata
                 }
             };
 

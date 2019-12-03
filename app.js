@@ -13,8 +13,9 @@
                 controller: 'HomeController',
                 templateUrl: 'home/home.view.html',
                 controllerAs: 'vm'
-            })
 
+            })
+            
             .when('/login', {
                 controller: 'LoginController',
                 templateUrl: 'login/login.view.html',
@@ -27,9 +28,9 @@
                 controllerAs: 'vm'
             })
 
-            .when('/globalview', {
-                controller: 'GlobalController',
-                templateUrl: 'admin view/global admin view/globalview.html',
+            .when('/admin', {
+                controller: 'AdminController',
+                templateUrl: 'admin/admin.view.html',
                 controllerAs: 'vm'
             })
             

@@ -1,0 +1,20 @@
+
+<h2>Global Admin Access</h2>
+
+<div class="btn-group">
+  <link rel="stylesheet" href="adminviews.css">
+  <button onclick="">Manage User Accounts</button>
+  <button>Assign Roles</button>
+  <button>Help Desk</button>
+</div>
+<h3>All registered users:</h3>
+<ul>
+    <li ng-repeat="user in vm.allUsers">
+        {{user.username}} ({{user.firstName}} {{user.lastName}} {{user.role}})
+        - <a ng-click="vm.deleteUser(user.id)">Delete</a>
+        - <select><option ng-repeat="x in roles">{{x}}</option></select>
+    </li>
+</ul>
+<p><a href="#!/login" class="btn btn-primary">Logout</a></p>
+<p>&nbsp;</p>
+
