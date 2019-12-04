@@ -16,8 +16,6 @@
         service.Create = Create;
         service.Update = Update;
         service.Delete = Delete;
-        service.SetRole = SetRole;
-        service.GetRole = GetRole;
 
         return service;
 
@@ -85,29 +83,6 @@
             deferred.resolve();
 
             return deferred.promise;
-        }
-
-        //TODO: have to push role values to users that saves to the cookies
-        function SetRole(user,role){
-            var deferred = $q.defer();
-            var users = getUsers();
-            for (var i = 0; i < users.length; i++) {
-                if (users[i].id === user.id) {
-                    users[i] = user;
-                    user[i].userRole = role;
-                    break;
-                }
-            }
-                setUsers(users);
-                deferred.resolve();
-
-            deferred.resolve({ success: true });
-            return deferred.promise;
-        }
-        
-        //place holder for code
-        function GetRole(role){
-            return $http.get('/api/users/' + role).then(handleSuccess, handleError('Error getting role from user'));
         }
 
         function Delete(id) {

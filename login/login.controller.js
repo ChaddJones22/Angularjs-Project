@@ -8,7 +8,6 @@
     LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService'];
     function LoginController($location, AuthenticationService, FlashService) {
         var vm = this;
-
         vm.login = login;
 
         (function initController() {
@@ -22,11 +21,21 @@
                 if (response.success) {
                     AuthenticationService.SetCredentials(vm.username, vm.password);
                     if (vm.password == "admin" && vm.username == "admin") {$location.path('/admin')}
-                    else if (vm.userRole == "ADMIN") {$location.path('/admin')}
-                   else if (vm.userRole == "ENGG_ADMIN") {$location.path('/engineering')}
-                   else if (vm.userRole == "FINANCE_ADMIN") {$location.path('/finance')}
-                   else if (vm.userRole == "SALES_ADMIN") {$location.path('/sales')}
-                   else if (vm.userRole == "HR_ADMIN") {$location.path('/human')}
+                    else if (response.currentRole == "ADMIN") {
+                        $location.path('/admin')
+                    }
+                    else if (response.currentRole == "ENGG_ADMIN") {
+                        $location.path('/engineering')
+                    }
+                    else if (response.currentRole == "FINANCE_ADMIN") {
+                        $location.path('/finance')
+                    }
+                    else if (response.currentRole == "SALES_ADMIN") {
+                        $location.path('/sales')
+                    }
+                    else if (response.currentRole == "HR_ADMIN") {
+                        $location.path('/human')
+                    }
                     else {$location.path('/')}
                 } 
                 else {
@@ -36,5 +45,4 @@
             });
         };
     }
-
 })();

@@ -15,9 +15,9 @@
         Role: {{user.userRole}}<br/>
         <!--Testing but will move to buttons on the top-->
         -- <a ng-click="vm.deleteUser(user.id)">Delete</a><br/>
-        - <select ng-model="selectedRole"><option ng-repeat="x in role" value="{{x}}">{{x}}</option></select><br/>
+        - <select ng-model="selectedRole"><option ng-repeat="x in role">{{x}}</option></select><br/>
         Click button to confirm role:
-        <button ng-click="vm.setCurrentRole(user.id, {{selectedRole}})">{{selectedRole}}</button><br/><br/>
+        <button ng-click="vm.setCurrentRole(user, selectedRole)">{{selectedRole}}</button><br/><br/>
       </li>
 </ul>
 <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
