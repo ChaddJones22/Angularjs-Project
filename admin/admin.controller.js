@@ -14,7 +14,7 @@
         vm.deleteUser = deleteUser;
         vm.setCurrentRole = setCurrentRole;
         vm.loadCurrentRole = loadCurrentRole
-        $rootScope.role = ["NONE", "ADMIN", "FINANCE_ADMIN", "SALES_ADMIN", "HR_ADMIN", "ENGG_ADMIN"];
+        $rootScope.role = ["BASIC", "ADMIN", "FINANCE_ADMIN", "SALES_ADMIN", "HR_ADMIN", "ENGG_ADMIN"];
 
         initController();
 

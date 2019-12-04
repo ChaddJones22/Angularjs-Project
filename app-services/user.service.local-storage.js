@@ -87,6 +87,7 @@
             return deferred.promise;
         }
 
+        //TODO: have to push role values to users that saves to the cookies
         function SetRole(user, role){
             var deferred = $q.defer();
             var users = getUsers();
@@ -98,13 +99,14 @@
             }
                 // assign role
                 // save to local storage
-                users.push(role);
+                users.push({userrole: role});
                 setUsers(users);
 
             deferred.resolve({ success: true });
             return deferred.promise;
         }
-
+        
+        //place holder for code
         function GetRole(role){
             return $http.get('/api/users/' + role).then(handleSuccess, handleError('Error getting role from user'));
         }
