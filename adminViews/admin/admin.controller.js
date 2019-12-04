@@ -37,8 +37,8 @@
                 });
         }
 
-        function setCurrentRole(user,role){
-            UserService.SetRole(user,role)
+        function setCurrentRole(){
+            UserService.Update(vm.user)
             .then(function (user,role){
                 vm.user = user;
                 vm.user.userRole = role;
