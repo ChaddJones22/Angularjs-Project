@@ -88,19 +88,18 @@
         }
 
         //TODO: have to push role values to users that saves to the cookies
-        function SetRole(user, role){
+        function SetRole(user,role){
             var deferred = $q.defer();
             var users = getUsers();
             for (var i = 0; i < users.length; i++) {
                 if (users[i].id === user.id) {
                     users[i] = user;
+                    user[i].userRole = role;
                     break;
                 }
             }
-                // assign role
-                // save to local storage
-                users.push({userrole: role});
                 setUsers(users);
+                deferred.resolve();
 
             deferred.resolve({ success: true });
             return deferred.promise;

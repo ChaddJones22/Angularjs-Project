@@ -30,10 +30,34 @@
 
             .when('/admin', {
                 controller: 'AdminController',
-                templateUrl: 'admin/admin.view.html',
+                templateUrl: 'adminViews/admin/admin.view.html',
                 controllerAs: 'vm'
             })
             
+            .when('/engineering', {
+                controller: 'AdminController',
+                templateUrl: 'adminViews/engineering/engineering.view.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/finance', {
+                controller: 'AdminController',
+                templateUrl: 'adminViews/finance/finance.view.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/sales', {
+                controller: 'AdminController',
+                templateUrl: 'adminViews/sales/sales.view.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/human', {
+                controller: 'AdminController',
+                templateUrl: 'adminViews/humanRes/hr.view.html',
+                controllerAs: 'vm'
+            })
+
             .otherwise({ redirectTo: '/login' });
     }
 

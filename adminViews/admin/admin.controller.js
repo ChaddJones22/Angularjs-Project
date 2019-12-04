@@ -37,10 +37,11 @@
                 });
         }
 
-        function setCurrentRole(role){
-            UserService.SetRole(user, role)
-            .then(function (user){
+        function setCurrentRole(user,role){
+            UserService.SetRole(user,role)
+            .then(function (user,role){
                 vm.user = user;
+                vm.user.userRole = role;
                 loadAllUsers();
             });
         }

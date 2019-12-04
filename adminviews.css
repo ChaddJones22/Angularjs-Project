@@ -2,7 +2,7 @@
   background-color: blue; /*blue background*/
   border: 1px black; /* black border */
   color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
+  padding: 4px 10px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: center; /* Float the buttons side by side */
 }

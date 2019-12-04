@@ -13,7 +13,7 @@
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
         vm.setRole = setRole;
-        $rootScope.roles = ["admin", "engineering"];
+        //$rootScope.roles = ["admin", "engineering"];
 
         initController();
 

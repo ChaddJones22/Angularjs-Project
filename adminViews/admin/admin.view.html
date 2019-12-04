@@ -1,9 +1,9 @@
 
-<h2>Global Admin Access</h2>
+<h2>Global Admin Page</h2>
 <!--TODO: correct operations to buttons (Manage, Assign, Help)-->
 <div class="btn-group">
   <link rel="stylesheet" href="adminviews.css">
-  <button onclick="">Manage User Accounts</button>
+  <button>Manage User Accounts</button>
   <button>Assign Roles</button>
   <button>Help Desk</button>
 </div>
@@ -17,9 +17,14 @@
         -- <a ng-click="vm.deleteUser(user.id)">Delete</a><br/>
         - <select ng-model="selectedRole"><option ng-repeat="x in role" value="{{x}}">{{x}}</option></select><br/>
         Click button to confirm role:
-        <button ng-click="vm.setCurrentRole({{selectedRole}})">{{selectedRole}}</button><br/><br/>
+        <button ng-click="vm.setCurrentRole(user.id, {{selectedRole}})">{{selectedRole}}</button><br/><br/>
       </li>
 </ul>
 <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
-<p>&nbsp;</p>
 
+
+<p><a href="#!/admin" class="btn btn-primary">Admin</a></p>
+<p><a href="#!/engineering" class="btn btn-primary">Engineering</a></p>
+<p><a href="#!/human" class="btn btn-primary">HR</a></p>
+<p><a href="#!/finance" class="btn btn-primary">Finance</a></p>
+<p><a href="#!/sales" class="btn btn-primary">Sales</a></p>

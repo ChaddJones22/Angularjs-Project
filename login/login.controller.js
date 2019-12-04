@@ -20,7 +20,7 @@
             vm.dataLoading = true;
             AuthenticationService.Login(vm.username, vm.password, function (response) {
                 if (response.success) {
-                    AuthenticationService.SetCredentials(vm.username, vm.password, vm.role);
+                    AuthenticationService.SetCredentials(vm.username, vm.password);
                     if (vm.password == "admin" && vm.username == "admin"){
                         $location.path('/admin')
                     } else 
